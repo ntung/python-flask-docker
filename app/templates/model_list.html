@@ -1,0 +1,35 @@
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+    <meta charset="UTF-8">
+    <title>List of first 50 models</title>
+
+    {% if result %}
+    <table id="models" style="width: 100%">
+    <tbody><tr>
+        <th>ID</th>
+        <th>Submission ID</th>
+    </tr>
+    {% for row in result %}
+    <tr>
+        <td> {{ row.id }}</td>
+        <td> {{ row.submission_id }}</td>
+    </tr>
+    {% endfor %}
+    </tbody></table>
+    {% endif %}
